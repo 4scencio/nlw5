@@ -1,4 +1,4 @@
-# Base do Projeto TypeScript
+## Base do Projeto TypeScript
 
 ```
 yarn init -y
