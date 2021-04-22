@@ -10,10 +10,12 @@ class UsersService {
             email
         })
 
+        //Se existir, retornar ele
         if(userExists) {
             return userExists
         }
 
+        //Se não, criar um novo usuário
         const user = usersRepository.create({
             email
         })
