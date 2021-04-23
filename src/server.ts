@@ -1,13 +1,21 @@
 import express from 'express'
+import { createServer } from 'http'
+import { Server, Socket } from 'socket.io'
 
 import './database'
+import { routes } from './routes'
 
 const app = express()
 
-app.use(express.json())
+const http = createServer(app) // Criando Protocólo HTTP
+const io = new Server(http) // Criando Protocólo WebSocket
 
-import { routes } from './routes'
+io.on('connection', (socket: Socket) => {
+    console.log(`${socket.id} se conectou`)
+})
+
+app.use(express.json())
 
 app.use(routes)
 
-app.listen(3000, () => console.log('🚀 O servidor está rodando na porta 3000'))
+http.listen(3000, () => console.log('🚀 O servidor está rodando na porta 3000'))
