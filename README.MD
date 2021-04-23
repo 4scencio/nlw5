@@ -21,8 +21,8 @@ yarn add sqlite3
 - Criar pasta de migrations
 - Criar pasta de entities
 - Criar pasta de repositories
-- Criar pasta de controllers
 - Criar pasta de services
+- Criar pasta de controllers
 ```
 
 ## Comandos CLI TypeORM Utilizados:
